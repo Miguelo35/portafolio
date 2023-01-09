@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+        <title>Encriptador version 1.0</title>
+    </head>
+
+    <header>
+        <img src="Imagenes/Logo.png" alt="logo de Alura">
+    </header>
+    
+    <body>
+        <main class="contenedor-principal">
+            <div class="tarjeta">
+               <textarea cols="70" rows="10" id="mensaje" class="areaEncriptado"></textarea>
+                <button class="botonEncriptar" id="encriptar">Encriptar</button>
+                <button class="botonDesencriptar" id="desencriptar">Desencriptar</button>
+                <img src="Imagenes/Frame 1.png" alt="" class="logoLetras">
+            </div>
+            <div class="imagen-minusculas-mayusculas">
+            </div>
+        </main>    
+        <img src="Imagenes/Muñeco.png" alt="" class="logo">
+        
+            <div class="tarjeta2">
+                <textarea cols="70" rows="10" id="resultado" class="areaResultado"></textarea>
+                <button class="botonCopiar" id="copiar">Copiar</button>
+            </div> 
+        
+    </body>
+
+    <script>
+        //                <input type="text" id="mensaje" placeholder="Ingrese su mensaje">
+        //                <input type="text" id="resultado" placeholder="Resultado...">
+
+        const inputMensaje= document.querySelector("#mensaje");
+        const inputResultado= document.querySelector("#resultado");
+
+        const btnEncriptar = document.querySelector ("#encriptar");
+        const btnDesencriptar = document.querySelector ("#desencriptar");
+        const btnCopiar = document.querySelector ("#copiar");
+        const btnEscuchar = document.querySelector ("#escuchar");
+
+        function encriptar() {
+            var mensaje= inputMensaje.value;
+            var mensajeEncriptado= mensaje.replaceAll("e","enter").replaceAll("i","imes").replaceAll("o","ober").replaceAll("a","ai").replaceAll("u","ufat");
+
+            inputResultado.value= mensajeEncriptado;
+        }
+
+        function desencriptar() {
+            var mensajeEncriptado= inputMensaje.value;
+            var mensajeDesencriptado= mensajeEncriptado.replaceAll("enter","e").replaceAll("imes","i").replaceAll("ober","o").replaceAll("ai","a").replaceAll("ufat","u");
+
+            inputResultado.value= mensajeDesencriptado;
+        }
+
+        function copiar(){
+            var mensajeEncriptado = inputResultado.value;
+            navigator.clipboard.writeText(mensajeEncriptado);
+            inputMensaje.value="";
+            inputMensaje.focus();
+        }
+
+        function escuchar(){
+            var mensajeEncriptado= inputResultado.value;
+            let msg= new SpeechSynthesisUtterance();
+            msg.text= mensajeEncriptado;
+            msg.lang="es.Es";
+            window.speechSynthesis.speak(msg);
+        }
+
+        btnEncriptar.onclick= encriptar;
+        btnDesencriptar.onclick= desencriptar;
+        btnCopiar.onclick= copiar;
+        btnEscuchar.onclick= escuchar;
+    </script>
+    <footer>
+        <p class="piePagina">Desarrollo por: <mark>Miguel E. Olivares</mark>  -CHALLENGE 2022 -  <img
+            src="https://flagcdn.com/16x12/gt.png"
+            srcset="https://flagcdn.com/32x24/gt.png 2x,
+              https://flagcdn.com/48x36/gt.png 3x"
+            width="16"
+            height="12"
+            alt="Guatemala"></p>
+       
+    </footer>
+</html>
+    
+    
+    
