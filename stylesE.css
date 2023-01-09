@@ -1,0 +1,86 @@
+body{
+    height: 100%;
+    background-color: #F3F5FC;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0em;
+}
+
+form{
+    margin: 40px 0;
+}
+
+form label, form legend{
+    display: block;
+    font-size: 20px;
+    margin: 0 0 10px;
+}
+
+.input-padron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 50%;
+}
+
+
+.encriptar{
+    width: 25%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: darkblue;
+    border: none;
+    border-radius: 10px;
+    transition: 1s all;
+    cursor: pointer;
+    margin: 20px;
+    
+}
+
+.desencriptar{
+    width: 25%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: lightslategray;
+    border: none;
+    border-radius: 10px;
+    transition: 1s all;
+    cursor: pointer;
+    
+}
+
+.productoss{
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px;
+}
+.munheco{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 60%;
+    padding:auto;
+    box-sizing: border-box;
+    border-color: #000000;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+}
+
+.warning{
+    text-align: left;
+    color: gray;
+    font-weight: bold;
+}
+
+footer{
+    text-align: left;
+    
+    padding: 40px;
+}
